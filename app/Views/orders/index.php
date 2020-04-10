@@ -13,7 +13,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         $(function() {
-            var ip = 'localhost:3000';
+            var host = window.location.hostname;
+            var ip = host+':3000';
+            console.log(ip);
             var socket = io(ip);
             $('#add_order_btn').click(function() {
                 axios.post('/orders/store')
